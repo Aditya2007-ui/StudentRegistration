@@ -1,4 +1,5 @@
 FROM tomcat:10.1-jdk17
-COPY *.war /usr/local/tomcat/webapps/ROOT.war
+RUN rm -rf /usr/local/tomcat/webapps/ROOT
+COPY StudentRegistration/ /usr/local/tomcat/webapps/ROOT/
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
